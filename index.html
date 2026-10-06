@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FemmeGo - أول تطبيق نسائي متعدد الاستخدامات</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap');
+        body { font-family: 'Tajawal', sans-serif; }
+        .radar-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.4); opacity: 0.2; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col justify-between">
+
+    <!-- شريط التنقل العلوي -->
+    <header class="bg-white dark:bg-slate-900 shadow-sm sticky top-0 z-50 border-b border-pink-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-pink-500 to-rose-400 flex items-center justify-center text-white font-black text-xl shadow-md shadow-pink-500/20">
+                    F
+                </div>
+                <div>
+                    <h1 class="font-black text-xl text-pink-600 dark:text-pink-400 tracking-wide">FemmeGo</h1>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">الجزائر النسائي الحصري</p>
+                </div>
+            </div>
+
+            <!-- أدوات التحكم السريعة -->
+            <div class="flex items-center space-x-2 space-x-reverse">
+                <!-- تبديل اللغة -->
+                <select id="langSwitch" onchange="changeLanguage(this.value)" class="bg-slate-100 dark:bg-slate-800 text-xs px-2 py-1.5 rounded-lg border-0 focus:ring-2 focus:ring-pink-500 cursor-pointer">
+                    <option value="ar">العربية</option>
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                </select>
+
+                <!-- زر الوضع الداكن -->
+                <button onclick="toggleDarkMode()" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-yellow-400 hover:bg-pink-50 dark:hover:bg-slate-700 transition">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- زر الطوارئ SOS السريع -->
+                <button onclick="openModal('sosModal')" class="bg-rose-500 hover:bg-rose-600 text-white text-xs px-3 py-1.5 rounded-lg font-bold shadow-sm flex items-center space-x-1 space-x-reverse">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>SOS</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="
